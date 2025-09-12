@@ -73,9 +73,9 @@ const Contact = () => {
           </Button>
           
           <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
-            <a href="https://www.behance.net/ronaldo472" target="_blank" rel="noopener noreferrer">
+            <a href="/portfolio">
               <ExternalLink className="mr-2 h-5 w-5" />
-              View Full Portfolio
+              View Complete Portfolio
             </a>
           </Button>
         </div>

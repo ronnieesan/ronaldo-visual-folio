@@ -2,20 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Play, X } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  fullDescription?: string;
-  image: string;
-  tags: string[];
-  views: number;
-  appreciations: number;
-  youtubeUrl?: string;
-  tools: string[];
-  year: string;
-  type: "video" | "documentary" | "commercial" | "music-video";
-}
+import { Project } from "@/data/projects";
 
 interface ProjectModalProps {
   project: Project;
