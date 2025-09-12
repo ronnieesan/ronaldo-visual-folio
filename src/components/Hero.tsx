@@ -2,15 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Mail, Youtube, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profileImg from "@/assets/ronak-profile.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBg})`
+    }}>
         <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       </div>
       
@@ -18,11 +15,7 @@ const Hero = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Profile Image */}
         <div className="mb-8">
-          <img 
-            src={profileImg}
-            alt="Ronak Parmar"
-            className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary shadow-glow"
-          />
+          <img src={profileImg} alt="Ronak Parmar" className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary shadow-glow" />
         </div>
         
         {/* Main Content */}
@@ -51,28 +44,11 @@ const Hero = () => {
         
         {/* Social Links */}
         <div className="flex justify-center gap-6">
-          <a 
-            href="https://ronakparmar.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-          >
-            <ExternalLink className="h-6 w-6" />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/ronakparmar" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-          >
+          
+          <a href="https://www.linkedin.com/in/ronakparmar" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
             <Linkedin className="h-6 w-6" />
           </a>
-          <a 
-            href="http://youtube.com/@AbstractThoughtsIn" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-          >
+          <a href="http://youtube.com/@AbstractThoughtsIn" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300">
             <Youtube className="h-6 w-6" />
           </a>
         </div>
@@ -84,8 +60,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
