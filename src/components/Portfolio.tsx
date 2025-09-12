@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Eye, Heart, Play, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Eye, Heart, Play, Mail, ChevronDown, ChevronUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import ProjectModal from "./ProjectModal";
 
 // Import local images
@@ -102,6 +105,9 @@ const projects: Project[] = [
 ];
 
 const Portfolio = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <section className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -114,7 +120,7 @@ const Portfolio = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <ProjectModal key={index} project={project}>
               <Card className="group bg-gradient-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-cinematic cursor-pointer overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="relative overflow-hidden">
@@ -193,6 +199,35 @@ const Portfolio = () => {
             </ProjectModal>
           ))}
         </div>
+
+        {/* See More Button */}
+        {!showAll && projects.length > 3 && (
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => setShowAll(true)}
+              variant="outline"
+              size="lg"
+              className="group"
+            >
+              <span>See All Projects</span>
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
+            </Button>
+          </div>
+        )}
+
+        {showAll && (
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => setShowAll(false)}
+              variant="outline"
+              size="lg"
+              className="group"
+            >
+              <span>Show Less</span>
+              <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
+            </Button>
+          </div>
+        )}
         
         {/* Call to Action */}
         <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '800ms' }}>
@@ -207,15 +242,13 @@ const Portfolio = () => {
               <Mail className="h-4 w-4" />
               Get In Touch
             </a>
-            <a 
-              href="https://www.behance.net/ronaldo472" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/portfolio"
               className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-lg transition-colors duration-300"
             >
               <ExternalLink className="h-4 w-4" />
-              View Full Portfolio
-            </a>
+              View Complete Portfolio
+            </Link>
           </div>
         </div>
       </div>
