@@ -78,7 +78,7 @@ export const projects: Project[] = [
     tags: ["Music Production", "Composition", "Audio"],
     views: 30,
     appreciations: 0,
-    soundCloudUrl: "https://soundcloud.com/ronakparmar/tracks",
+    soundCloudUrl: "https://soundcloud.com/ronaldo472/tracks",
     tools: ["Pro Tools", "Logic Pro", "Various Instruments"],
     year: "2018",
     type: "video"
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     tags: ["Sound Design", "Installation", "Interactive Art"],
     views: 40,
     appreciations: 1,
-    vimeoUrl: "https://vimeo.com/189234567", // Note: Actual Vimeo URL needs to be extracted from the private video
+    vimeoUrl: "https://vimeo.com/233822137?fl=pl&fe=vl", // Note: Actual Vimeo URL needs to be extracted from the private video
     tools: ["Adobe Premiere Pro", "Adobe Audition", "Interactive Design"],
     year: "2016",
     type: "installation"
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     tags: ["Sound Design", "Audio Production", "Technical"],
     views: 30,
     appreciations: 0,
-    soundCloudUrl: "https://soundcloud.com/ronakparmar/tracks",
+    soundCloudUrl: "https://soundcloud.com/ronak-parmar-5/tracks",
     tools: ["Pro Tools", "Logic Pro", "Field Recording"],
     year: "2016",
     type: "video"
