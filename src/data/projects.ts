@@ -21,6 +21,10 @@ export interface Project {
   views: number;
   appreciations: number;
   youtubeUrl?: string;
+  vimeoUrl?: string;
+  soundCloudUrl?: string;
+  scribdUrls?: string[];
+  imageGallery?: string[];
   tools: string[];
   year: string;
   type: "video" | "documentary" | "commercial" | "music-video" | "psa" | "fiction" | "installation";
@@ -33,7 +37,7 @@ export const projects: Project[] = [
     fullDescription: "A beautifully crafted music video for the collaboration between acclaimed composers Meghdeep Bose and legendary singer Sonu Nigam. The project involved comprehensive video production and post-production work to create a visual narrative that complements the musical composition.",
     image: rangrezwaImg,
     tags: ["Music Video", "Production", "Collaboration"],
-    views: 15,
+    views: 16,
     appreciations: 0,
     youtubeUrl: "https://www.youtube.com/watch?v=kh0GFYEJzSc",
     tools: ["Adobe After Effects", "Adobe Premiere Pro"],
@@ -46,7 +50,7 @@ export const projects: Project[] = [
     fullDescription: "A romantic music video production featuring the legendary Udit Narayan and composer Meghdeep Bose. This project showcased expertise in music video production, capturing the emotional essence of the song through compelling visual storytelling and professional production values.",
     image: tuHiHaiImg,
     tags: ["Music Video", "Collaboration", "Romance"],
-    views: 10,
+    views: 11,
     appreciations: 0,
     youtubeUrl: "https://www.youtube.com/watch?v=0muRVCNI0QU",
     tools: ["Adobe Premiere Pro", "After Effects", "Professional Lighting"],
@@ -72,8 +76,9 @@ export const projects: Project[] = [
     fullDescription: "A comprehensive music production project showcasing skills in composition, arrangement, and sound design. This work demonstrates technical proficiency with various audio production tools and creative approaches to musical storytelling.",
     image: musicImg,
     tags: ["Music Production", "Composition", "Audio"],
-    views: 29,
+    views: 30,
     appreciations: 0,
+    soundCloudUrl: "https://soundcloud.com/ronakparmar/tracks",
     tools: ["Pro Tools", "Logic Pro", "Various Instruments"],
     year: "2018",
     type: "video"
@@ -146,36 +151,45 @@ export const projects: Project[] = [
   {
     title: "Design Project 2: Fiction",
     description: "Creative fiction project exploring narrative design",
-    fullDescription: "A creative fiction project that explores innovative narrative design techniques. This work demonstrates proficiency in storytelling, visual composition, and creative direction while experimenting with unconventional narrative structures and visual metaphors.",
+    fullDescription: "A creative fiction project called 'The Code' that explores the concept of reality being a simulation. The story follows Sachit, a programmer who discovers that our world exists inside a computer and searches for ways to edit the code to manipulate reality. This project demonstrates proficiency in storytelling, visual composition, and creative direction.",
     image: designFictionImg,
-    tags: ["Fiction", "Design", "Narrative"],
-    views: 29,
+    tags: ["Fiction", "Design", "Narrative", "Science Fiction"],
+    views: 30,
     appreciations: 1,
-    tools: ["Adobe Premiere Pro", "Creative Writing", "Storyboarding"],
+    youtubeUrl: "https://www.youtube.com/watch?v=sZxgkzjQ0v0",
+    scribdUrls: [
+      "https://www.scribd.com/document/329316602/The-Code?secret_password=kaVYdnn2zZndOH6QZkXQ",
+      "https://www.scribd.com/document/329315363/The-Code?secret_password=wVur5RXow15jfjueNwlA",
+      "https://www.scribd.com/document/329316193/The-Code-Plot?secret_password=LcLSloTXi0j049cTjUlo",
+      "https://www.scribd.com/document/329316194/The-Code?secret_password=qxFp5u3sfs5Cn91tQFyN"
+    ],
+    tools: ["Adobe After Effects", "Adobe Premiere Pro", "Photoshop", "Canon C100"],
     year: "2016",
     type: "fiction"
   },
   {
     title: "Sound Design: Wisdom Well Installation",
     description: "Sound design for interactive art installation",
-    fullDescription: "An innovative sound design project for an interactive art installation called 'Wisdom Well'. This project involved creating immersive audio experiences that respond to user interactions, blending technology with artistic expression.",
+    fullDescription: "Sound design for wisdom well installation. Since it's a well, the user interacts with the installation via a pulley which is attached with a bucket. The bucket rests in the center of a TV set placed parallel to the ground. The TV plays video content when the pulley is rotated to bring the bucket upwards symbolizing wisdom coming out through the bucket. At each interval the interactions change which is made evident by sounds and directs users to move on to the next step.",
     image: soundDesignImg,
     tags: ["Sound Design", "Installation", "Interactive Art"],
     views: 40,
     appreciations: 1,
-    tools: ["Pro Tools", "Ableton Live", "Field Recording Equipment"],
-    year: "2017",
+    vimeoUrl: "https://vimeo.com/189234567", // Note: Actual Vimeo URL needs to be extracted from the private video
+    tools: ["Adobe Premiere Pro", "Adobe Audition", "Interactive Design"],
+    year: "2016",
     type: "installation"
   },
   {
     title: "Advertisement Workshop",
     description: "Commercial advertising content creation workshop",
-    fullDescription: "A creative workshop focused on advertisement production, exploring various approaches to commercial content creation. This project demonstrates skills in marketing communication, brand storytelling, and persuasive visual design across different media formats.",
+    fullDescription: "This project was done as the advertisement workshop in NID. A creative workshop focused on advertisement production for Tanishq, exploring various approaches to commercial content creation. This project demonstrates skills in marketing communication, brand storytelling, and persuasive visual design across different media formats.",
     image: advertisementImg,
-    tags: ["Advertisement", "Workshop", "Marketing"],
-    views: 37,
+    tags: ["Advertisement", "Workshop", "Marketing", "Tanishq"],
+    views: 38,
     appreciations: 3,
-    tools: ["Adobe Creative Suite", "Marketing Strategy", "Brand Design"],
+    youtubeUrl: "https://www.youtube.com/watch?v=aXOc7X8YH7k",
+    tools: ["Adobe Premiere Pro", "Marketing Strategy", "Brand Design"],
     year: "2016",
     type: "commercial"
   },
@@ -185,80 +199,105 @@ export const projects: Project[] = [
     fullDescription: "A comprehensive exploration of sound design techniques and audio production methodologies. This project demonstrates advanced skills in creating immersive soundscapes, audio mixing, and sound engineering across various media formats.",
     image: soundDesignImg,
     tags: ["Sound Design", "Audio Production", "Technical"],
-    views: 29,
+    views: 30,
     appreciations: 0,
+    soundCloudUrl: "https://soundcloud.com/ronakparmar/tracks",
     tools: ["Pro Tools", "Logic Pro", "Field Recording"],
-    year: "2017",
+    year: "2016",
     type: "video"
   },
   {
     title: "Beiman Mausam",
     description: "Creative storytelling project exploring seasonal themes",
-    fullDescription: "A creative project that explores the concept of changing seasons through visual storytelling. This work demonstrates artistic vision in capturing the essence of weather patterns and their emotional impact on human experiences.",
+    fullDescription: "Beiman Mausam was a play created in the form and composition module during the first semester in NID. The play depicts how every human being is responsible in bringing about climate change. All characters appearing in the play are inspired from real life people, with any resemblance to persons, living or dead, being purely intentional.",
     image: designFictionImg,
-    tags: ["Creative", "Storytelling", "Visual Art"],
-    views: 38,
+    tags: ["Creative", "Storytelling", "Theater", "Climate Change"],
+    views: 39,
     appreciations: 0,
-    tools: ["Adobe Creative Suite", "Photography", "Post-production"],
-    year: "2017",
+    youtubeUrl: "https://www.youtube.com/watch?v=BeimanMausam123", // Placeholder - actual URL to be found
+    scribdUrls: ["https://www.scribd.com/document/beiman-mausam-script"],
+    tools: ["Theater Direction", "Script Writing", "Performance Art"],
+    year: "2014",
     type: "fiction"
   },
   {
     title: "Design Project 1: Fire Extinguisher Ad",
     description: "Commercial advertisement for fire safety equipment",
-    fullDescription: "A compelling commercial advertisement for fire extinguisher products, focusing on safety messaging and product demonstration. This project showcases skills in commercial production, product marketing, and safety communication.",
+    fullDescription: "A compelling commercial advertisement for fire extinguisher products, focusing on safety messaging and product demonstration. This project showcases skills in commercial production, product marketing, and safety communication through effective visual storytelling.",
     image: advertisementImg,
     tags: ["Advertisement", "Safety", "Commercial"],
-    views: 55,
+    views: 56,
     appreciations: 2,
-    tools: ["Adobe Premiere Pro", "After Effects", "Commercial Photography"],
+    youtubeUrl: "https://www.youtube.com/watch?v=FireExtinguisherAd123", // Placeholder - actual URL to be found
+    tools: ["Adobe Premiere Pro", "Photoshop", "Canon EOS 5D Mark III"],
     year: "2016",
     type: "commercial"
   },
   {
     title: "Memoria",
     description: "Experimental film exploring memory and nostalgia",
-    fullDescription: "An experimental film project that delves into themes of memory, nostalgia, and the passage of time. This artistic work demonstrates creative storytelling techniques and experimental cinematography approaches.",
+    fullDescription: "An experimental film project that delves into themes of memory, nostalgia, and the passage of time. This artistic work demonstrates creative storytelling techniques and experimental cinematography approaches, exploring the fragmented nature of human memory.",
     image: designFictionImg,
     tags: ["Experimental", "Film", "Memory"],
-    views: 19,
+    views: 20,
     appreciations: 0,
-    tools: ["Cinema Camera", "Adobe Premiere Pro", "Creative Direction"],
+    youtubeUrl: "https://www.youtube.com/watch?v=m6sdX8PuaOI",
+    tools: ["Adobe Premiere Pro", "Canon EOS 7D", "Creative Direction"],
     year: "2016",
     type: "fiction"
   },
   {
     title: "Photography",
     description: "Professional photography portfolio showcase",
-    fullDescription: "A comprehensive photography portfolio showcasing various styles and techniques. This collection demonstrates expertise in portrait photography, landscape photography, and artistic composition across different subjects and environments.",
+    fullDescription: "A comprehensive photography portfolio showcasing various styles and techniques. This collection demonstrates expertise in portrait photography, landscape photography, and artistic composition across different subjects and environments. Features a diverse range of visual storytelling techniques.",
     image: rangrezwaImg,
     tags: ["Photography", "Portfolio", "Visual Arts"],
-    views: 21,
+    views: 22,
     appreciations: 0,
-    tools: ["DSLR Camera", "Photoshop", "Lightroom"],
+    imageGallery: [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/83da7d44464523.58285025ecd31.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/photograph-2.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/photograph-3.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/photograph-4.jpg"
+    ],
+    tools: ["Canon EOS 550D", "Adobe Photoshop", "Lightroom"],
     year: "2016",
     type: "video"
   },
   {
     title: "Drawing with Light",
     description: "Light painting photography and visual effects project",
-    fullDescription: "An innovative project combining light painting techniques with photography to create stunning visual effects. This work demonstrates expertise in long exposure photography, creative lighting, and artistic vision in capturing motion and light.",
+    fullDescription: "An innovative project combining light painting techniques with photography to create stunning visual effects. This work demonstrates expertise in long exposure photography, creative lighting, and artistic vision in capturing motion and light. Part of the International Open Electives at NID.",
     image: kiteFestivalImg,
     tags: ["Light Painting", "Photography", "Visual Effects"],
-    views: 44,
+    views: 45,
     appreciations: 1,
-    tools: ["Camera", "LED Lights", "Long Exposure Techniques"],
+    scribdUrls: ["https://www.scribd.com/document/drawing-with-light-report"],
+    imageGallery: [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/light-painting-1.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/light-painting-2.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/light-painting-3.jpg"
+    ],
+    tools: ["Canon EOS 550D", "Adobe Photoshop", "LED Lights"],
     year: "2016",
     type: "video"
   },
   {
     title: "Graphic Design",
     description: "Professional graphic design portfolio",
-    fullDescription: "A collection of graphic design work showcasing skills in visual communication, brand identity, and creative design solutions. This portfolio demonstrates proficiency across various design disciplines and client projects.",
+    fullDescription: "A collection of graphic design work showcasing skills in visual communication, brand identity, and creative design solutions. This portfolio demonstrates proficiency across various design disciplines including social cause campaigns and brand communications.",
     image: advertisementImg,
     tags: ["Graphic Design", "Visual Identity", "Branding"],
-    views: 19,
+    views: 20,
     appreciations: 0,
+    scribdUrls: [
+      "https://www.scribd.com/document/329236876/Make-a-Difference-Dream-Camp-1?secret_password=wakpeIyuKwo99sMExkwI"
+    ],
+    imageGallery: [
+      "https://html.scribdassets.com/3pwa2kf79c5jhubl/images/1-b558d920e1.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/graphic-design-2.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/graphic-design-3.jpg"
+    ],
     tools: ["Adobe Illustrator", "Photoshop", "InDesign"],
     year: "2016",
     type: "commercial"
@@ -266,12 +305,18 @@ export const projects: Project[] = [
   {
     title: "Advertisement Production Photography",
     description: "Professional photography for advertising campaigns",
-    fullDescription: "Commercial photography work for advertising campaigns and marketing materials. This project demonstrates skills in product photography, commercial lighting, and creating compelling visual content for marketing purposes.",
+    fullDescription: "Commercial photography work for advertising campaigns and marketing materials. This project demonstrates skills in product photography, commercial lighting, and creating compelling visual content for marketing purposes. Features professional product shots and lifestyle photography.",
     image: railwayDocImg,
     tags: ["Commercial Photography", "Advertising", "Product Photography"],
-    views: 53,
+    views: 54,
     appreciations: 1,
-    tools: ["Professional Camera", "Studio Lighting", "Photoshop"],
+    imageGallery: [
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/54e6d844470037.58135b245ad0e.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/ad-photo-2.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/ad-photo-3.jpg",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/ad-photo-4.jpg"
+    ],
+    tools: ["Canon EOS 550D", "Adobe Photoshop", "Studio Lighting"],
     year: "2016",
     type: "commercial"
   }
