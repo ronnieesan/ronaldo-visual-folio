@@ -67,10 +67,13 @@ const Contact = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="bg-gradient-accent text-primary-foreground font-semibold hover:shadow-glow transition-all duration-300">
-            <Mail className="mr-2 h-5 w-5" />
-            Start a Project
-          </Button>
+        <a href="mailto:contact@ronakparmar.com">
+  <Button size="lg" className="bg-gradient-accent text-primary-foreground font-semibold hover:shadow-glow transition-all duration-300">
+    <Mail className="mr-2 h-5 w-5" />
+    Start a Project
+  </Button>
+</a>
+
           
           <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
             <a href="/portfolio">
