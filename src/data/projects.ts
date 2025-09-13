@@ -306,7 +306,7 @@ export const projects: Project[] = [
     tools: ["Canon EOS 550D", "Adobe Photoshop", "Studio Lighting"],
     year: "2016",
     type: "commercial"
-  }
+  },
     {
     title: "Music",
     description: "Music production and sound design work",
@@ -319,5 +319,5 @@ export const projects: Project[] = [
     tools: ["Pro Tools", "Logic Pro", "Various Instruments"],
     year: "2018",
     type: "video"
-  },
+  }
 ];
