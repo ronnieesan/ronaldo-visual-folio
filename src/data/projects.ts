@@ -71,19 +71,6 @@ export const projects: Project[] = [
     type: "video"
   },
   {
-    title: "Music",
-    description: "Music production and sound design work",
-    fullDescription: "A comprehensive music production project showcasing skills in composition, arrangement, and sound design. This work demonstrates technical proficiency with various audio production tools and creative approaches to musical storytelling.",
-    image: musicImg,
-    tags: ["Music Production", "Composition", "Audio"],
-    views: 30,
-    appreciations: 0,
-    soundCloudUrl: "https://soundcloud.com/ronaldo472/tracks",
-    tools: ["Pro Tools", "Logic Pro", "Various Instruments"],
-    year: "2018",
-    type: "video"
-  },
-  {
     title: "Trailer: Railway Design Centre",
     description: "Promotional trailer for Railway Design Centre",
     fullDescription: "A compelling trailer for the Railway Design Centre documentary project. This piece serves as an introduction to the comprehensive research work conducted on Indian Railways, highlighting the human stories and experiences within the railway system.",
@@ -320,4 +307,17 @@ export const projects: Project[] = [
     year: "2016",
     type: "commercial"
   }
+    {
+    title: "Music",
+    description: "Music production and sound design work",
+    fullDescription: "A comprehensive music production project showcasing skills in composition, arrangement, and sound design. This work demonstrates technical proficiency with various audio production tools and creative approaches to musical storytelling.",
+    image: musicImg,
+    tags: ["Music Production", "Composition", "Audio"],
+    views: 30,
+    appreciations: 0,
+    soundCloudUrl: "https://soundcloud.com/ronaldo472/tracks",
+    tools: ["Pro Tools", "Logic Pro", "Various Instruments"],
+    year: "2018",
+    type: "video"
+  },
 ];
