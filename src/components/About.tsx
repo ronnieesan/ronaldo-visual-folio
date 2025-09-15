@@ -38,11 +38,19 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-card/50">
+    <section className="py-32 px-6 bg-secondary/20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-20">
+          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
+            About Me
+          </div>
+          
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            Creative <em className="italic font-light">Professional</em> with 
+            <span className="text-primary"> 10+ Years</span> Experience
+          </h2>
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
             Creative Video Producer & Motion Designer with 10+ years of experience crafting 
             high-impact content across education, entertainment, and marketing. Proven ability 
             to lead cross-functional teams, streamline production workflows, and deliver 
@@ -50,23 +58,25 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Experience */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-              <Briefcase className="h-6 w-6 text-primary" />
+            <h3 className="text-3xl font-semibold mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <Briefcase className="h-5 w-5" />
+              </div>
               Experience
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {experience.map((exp, index) => (
-                <Card key={index} className="bg-gradient-card border-border">
+                <Card key={index} className="bg-card border shadow-elegant hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="text-primary mt-1">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
                         {exp.icon}
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-lg">{exp.role}</h4>
+                        <h4 className="font-semibold text-lg text-foreground">{exp.role}</h4>
                         <p className="text-primary font-medium">{exp.company}</p>
                         <p className="text-muted-foreground text-sm flex items-center gap-1 mt-1">
                           <MapPin className="h-4 w-4" />
@@ -82,56 +92,50 @@ const About = () => {
 
           {/* Skills */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-              <Award className="h-6 w-6 text-primary" />
+            <h3 className="text-3xl font-semibold mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <Award className="h-5 w-5" />
+              </div>
               Skills & Expertise
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-8">
               {skills.map((skill, index) => (
                 <Badge 
                   key={index} 
                   variant="secondary" 
-                  className="bg-secondary/50 text-secondary-foreground border border-primary/20 hover:border-primary/50 transition-colors duration-300"
+                  className="bg-primary/10 text-primary border-0 hover:bg-primary/20 transition-colors duration-300 px-4 py-2"
                 >
                   {skill}
                 </Badge>
               ))}
             </div>
             
-            <div className="mt-8">
-              <h4 className="text-lg font-semibold mb-4">Available for</h4>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Freelance Projects</span>
+            <Card className="bg-card border shadow-elegant">
+              <CardContent className="p-6">
+                <h4 className="text-lg font-semibold mb-4 text-foreground">Available Services</h4>
+                <div className="space-y-3">
+                  {["Freelance Projects", "Video Production", "Sound Design", "Photography Services"].map((service, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-muted-foreground">{service}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Video Production</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Sound Design</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Photography Services</span>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <Card key={index} className="bg-gradient-card border-border text-center group hover:border-primary/50 transition-colors duration-300">
-              <CardContent className="p-6">
-                <div className="text-primary mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+            <Card key={index} className="bg-card border shadow-elegant text-center group hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-4xl font-bold mb-2 text-foreground">{stat.value}</div>
+                <div className="text-muted-foreground text-sm font-medium">{stat.label}</div>
               </CardContent>
             </Card>
           ))}

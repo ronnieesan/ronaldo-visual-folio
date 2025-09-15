@@ -12,11 +12,18 @@ const Portfolio = () => {
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-32 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Featured Work</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <div className="text-center mb-20">
+          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
+            Portfolio
+          </div>
+          
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            Featured <em className="italic font-light">Creative</em> Work
+          </h2>
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
             A curated selection of creative projects spanning film production, documentaries, 
             sound design, and commercial work across various industries.
           </p>
@@ -25,25 +32,25 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project, index) => (
             <ProjectModal key={index} project={project}>
-              <Card className="group bg-gradient-card border-border hover:border-primary/50 transition-all duration-500 hover:shadow-cinematic cursor-pointer overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <Card className="group bg-card border shadow-elegant hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Play button for videos */}
                   {project.youtubeUrl && (
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center shadow-glow transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
                         <Play className="h-8 w-8 text-primary-foreground ml-1" />
                       </div>
                     </div>
                   )}
                   
-                  <div className="absolute top-4 right-4 p-2 bg-background/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground transform translate-x-2 group-hover:translate-x-0">
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary hover:text-primary-foreground transform translate-x-2 group-hover:translate-x-0">
                     <ExternalLink className="h-4 w-4" />
                   </div>
                   
@@ -51,7 +58,7 @@ const Portfolio = () => {
                   <div className="absolute top-4 left-4">
                     <Badge 
                       variant="secondary" 
-                      className="bg-background/90 text-foreground backdrop-blur-sm"
+                      className="bg-background/90 text-foreground backdrop-blur-sm border-0"
                     >
                       {project.type.charAt(0).toUpperCase() + project.type.slice(1).replace('-', ' ')}
                     </Badge>
@@ -59,26 +66,28 @@ const Portfolio = () => {
                 </div>
                 
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-lg font-semibold group-hover:text-primary transition-colors duration-300 line-clamp-2 flex-1">
                       {project.title}
                     </h3>
                     {project.youtubeUrl && (
-                      <Play className="h-4 w-4 text-primary" />
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Play className="h-3 w-3 text-primary" />
+                      </div>
                     )}
                   </div>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2 font-light">
                     {project.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.slice(0, 2).map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="text-xs">
+                      <Badge key={tagIndex} variant="secondary" className="text-xs bg-primary/10 text-primary border-0">
                         {tag}
                       </Badge>
                     ))}
                     {project.tags.length > 2 && (
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs border-primary/20">
                         +{project.tags.length - 2}
                       </Badge>
                     )}
@@ -95,7 +104,7 @@ const Portfolio = () => {
                         <span>{project.appreciations}</span>
                       </div>
                     </div>
-                    <span className="text-xs">{project.year}</span>
+                    <span className="text-xs font-medium">{project.year}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -105,12 +114,12 @@ const Portfolio = () => {
 
         {/* See More Button */}
         {!showAll && projects.length > 3 && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button 
               onClick={() => setShowAll(true)}
               variant="outline"
               size="lg"
-              className="group"
+              className="group border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 rounded-full px-8"
             >
               <span>See All Projects</span>
               <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
@@ -119,12 +128,12 @@ const Portfolio = () => {
         )}
 
         {showAll && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button 
               onClick={() => setShowAll(false)}
               variant="outline"
               size="lg"
-              className="group"
+              className="group border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 rounded-full px-8"
             >
               <span>Show Less</span>
               <ChevronUp className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
@@ -133,21 +142,21 @@ const Portfolio = () => {
         )}
         
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '800ms' }}>
-          <p className="text-muted-foreground mb-6">
+        <div className="text-center mt-20 animate-fade-in" style={{ animationDelay: '800ms' }}>
+          <p className="text-muted-foreground mb-8 text-lg font-light">
             Interested in seeing more work or collaborating on a project?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="mailto:contact@ronakparmar.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-accent text-primary-foreground rounded-lg hover:shadow-glow transition-all duration-300 font-semibold"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 font-semibold"
             >
               <Mail className="h-4 w-4" />
               Get In Touch
             </a>
             <Link 
               to="/portfolio"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-lg transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-secondary/20 hover:bg-secondary/30 text-foreground rounded-full transition-colors duration-300"
             >
               <ExternalLink className="h-4 w-4" />
               View Complete Portfolio

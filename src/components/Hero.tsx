@@ -3,12 +3,10 @@ import { ExternalLink, Mail, Youtube, Linkedin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profileImg from "@/assets/ronak-profile.jpg";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBg})`
-    }}>
-        <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
+    return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Clean minimal background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-hero"></div>
       </div>
       
       {/* Content */}
@@ -19,24 +17,26 @@ const Hero = () => {
         </div>
         
         {/* Main Content */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-          Ronak Parmar
+        <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+          Creative Professional
+        </div>
+        
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tight leading-none">
+          We craft <em className="italic font-light">high-impact</em><br />
+          visual content for<br />
+          <span className="text-primary">Creative Brands</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
-          Film Maker • Photographer • Sound Designer
-        </p>
-        
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Creative Video Producer & Motion Designer with 10+ years of experience crafting high-impact content across education, entertainment, and marketing.
+        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+          We create, optimize, and scale visual storytelling that generates engagement and improves brand impact across education, entertainment, and marketing.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="bg-gradient-accent text-primary-foreground font-semibold hover:shadow-glow transition-all duration-300">
+          <Button size="lg" className="bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 rounded-full px-8">
             <Mail className="mr-2 h-5 w-5" />
-            Hire Me
+            Start a Project
           </Button>
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
+          <Button variant="outline" size="lg" className="border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 rounded-full px-8" asChild>
             <a href="/portfolio">
               <ExternalLink className="mr-2 h-5 w-5" />
               View Complete Portfolio
